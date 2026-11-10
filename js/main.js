@@ -4,9 +4,9 @@
 const BRANDS = [
   { name: "Marda",                   color: "#E30613" },
   { name: "Stoper",                  color: "#005095", logo: "stoper.svg" },
-  { name: "Kınaş",                   color: "#C8102E", logo: "kinas.png", invert: true },
+  { name: "Knauf",                   color: "#009FE3", logo: "knauf.png" },
   { name: "ABS Alçı",                color: "#1F5FA8", logo: "abs-alci.png" },
-  { name: "Valbort",                 color: "#1F3E8C" },
+  { name: "Wallboard",               color: "#D2232A", logo: "wallboard.png" },
   { name: "Tekno Yapı Kimyasalları", color: "#0072BC", logo: "tekno-yapi.png" },
   { name: "Filli Boya",              color: "#E30613", logo: "filli-boya.png" },
   { name: "Dalmaçyalı",              color: "#00A0E3", logo: "dalmacyali.png" },
