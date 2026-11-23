@@ -2,7 +2,7 @@
    Logo eklemek için: images/bayiler/ klasörüne dosyayı koyun ve aşağıda "logo" alanına adını yazın.
    Logo yoksa marka adı, renkli bir amblemle otomatik gösterilir. */
 const BRANDS = [
-  { name: "Marda",                   color: "#E30613" },
+  { name: "Ravago",                  color: "#0047BB", logo: "ravago.svg" },
   { name: "Stoper",                  color: "#005095", logo: "stoper.svg" },
   { name: "Knauf",                   color: "#009FE3", logo: "knauf.png" },
   { name: "ABS Alçı",                color: "#1F5FA8", logo: "abs-alci.png" },
