@@ -1,26 +1,27 @@
 /* ===== BAYİLİKLERİMİZ =====
    Logo eklemek için: images/bayiler/ klasörüne dosyayı koyun ve aşağıda "logo" alanına adını yazın.
-   Logo yoksa marka adı, renkli bir amblemle otomatik gösterilir. */
+   Logo yoksa marka adı, renkli bir amblemle otomatik gösterilir.
+   "url" alanı varsa logoya tıklayınca markanın web sitesi yeni sekmede açılır. */
 const BRANDS = [
-  { name: "Ravago",                  color: "#0047BB", logo: "ravago.svg" },
-  { name: "Stoper",                  color: "#005095", logo: "stoper.svg" },
-  { name: "Knauf",                   color: "#009FE3", logo: "knauf.png" },
-  { name: "ABS Alçı",                color: "#1F5FA8", logo: "abs-alci.png" },
-  { name: "Wallboard",               color: "#D2232A", logo: "wallboard.png" },
-  { name: "Tekno Yapı Kimyasalları", color: "#0072BC", logo: "tekno-yapi.png" },
-  { name: "Filli Boya",              color: "#E30613", logo: "filli-boya.png" },
-  { name: "Dalmaçyalı",              color: "#00A0E3", logo: "dalmacyali.png" },
-  { name: "Polisan",                 color: "#E4032E", logo: "polisan.svg" },
-  { name: "Onat Alçı",               color: "#1E4D3A", logo: "onat-alci.png" },
-  { name: "Fawori",                  color: "#111111", logo: "fawori.svg" },
-  { name: "Arkoz Gazbeton",          color: "#23135F", logo: "arkoz-gazbeton.png" },
-  { name: "Kalde",                   color: "#004B93", logo: "kalde.png" },
-  { name: "İzocam",                  color: "#0072BC", logo: "izocam.svg" },
-  { name: "Eskişehir Çimento",       color: "#3B2A9A", logo: "eskisehir-cimento.png" },
-  { name: "Vezirhan Çimento",        color: "#1565C0", logo: "vezirhan-cimento-dark.png" },
-  { name: "Marmara Çimento",         color: "#3E9B3A", logo: "marmara-cimento.png" },
-  { name: "Kilsan Tuğla",            color: "#E0601F", logo: "kilsan.png" },
-  { name: "Prosista Yapı",           color: "#D71920", logo: "prosista.png", invert: true }
+  { name: "Ravago",                  color: "#0047BB", logo: "ravago.svg", url: "https://ravagobuildingsolutions.com/tr/tr/" },
+  { name: "Stoper",                  color: "#005095", logo: "stoper.svg", url: "https://stopersolutions.com/tr/" },
+  { name: "Knauf",                   color: "#009FE3", logo: "knauf.png", url: "https://knauf.com/tr-TR" },
+  { name: "ABS Alçı",                color: "#1F5FA8", logo: "abs-alci.png", url: "https://www.absalci.com.tr/" },
+  { name: "Wallboard",               color: "#D2232A", logo: "wallboard.png", url: "https://www.wallboard.com.tr/" },
+  { name: "Tekno Yapı Kimyasalları", color: "#0072BC", logo: "tekno-yapi.png", url: "https://www.teknoyapi.com.tr/" },
+  { name: "Filli Boya",              color: "#E30613", logo: "filli-boya.png", url: "https://www.filliboya.com/" },
+  { name: "Dalmaçyalı",              color: "#00A0E3", logo: "dalmacyali.png", url: "https://www.dalmacyali.com.tr/" },
+  { name: "Polisan",                 color: "#E4032E", logo: "polisan.svg", url: "https://www.kansaipolisan.com/" },
+  { name: "Onat Alçı",               color: "#1E4D3A", logo: "onat-alci.png", url: "https://www.onpo.com.tr/tr" },
+  { name: "Fawori",                  color: "#111111", logo: "fawori.svg", url: "https://fawori.com/" },
+  { name: "Arkoz Gazbeton",          color: "#23135F", logo: "arkoz-gazbeton.png", url: "https://www.arkozgazbeton.com.tr/" },
+  { name: "Kalde",                   color: "#004B93", logo: "kalde.png", url: "https://kalde.com/tr" },
+  { name: "İzocam",                  color: "#0072BC", logo: "izocam.svg", url: "https://www.izocam.com.tr/" },
+  { name: "Eskişehir Çimento",       color: "#3B2A9A", logo: "eskisehir-cimento.png", url: "https://www.eskisehircimento.net/" },
+  { name: "Vezirhan Çimento",        color: "#1565C0", logo: "vezirhan-cimento-dark.png", url: "https://www.vezirhancimento.com/" },
+  { name: "Marmara Çimento",         color: "#3E9B3A", logo: "marmara-cimento.png", url: "https://www.marmaracimento.com/" },
+  { name: "Kilsan Tuğla",            color: "#E0601F", logo: "kilsan.png", url: "https://www.kilsan.com/" },
+  { name: "Prosista Yapı",           color: "#D71920", logo: "prosista.png", url: "https://www.prosista.com/", invert: true }
 ];
 
 function initials(n){
@@ -29,7 +30,8 @@ function initials(n){
 }
 
 function brandTile(b, i){
-  const el = document.createElement("div");
+  const el = document.createElement(b.url ? "a" : "div");
+  if (b.url){ el.href = b.url; el.target = "_blank"; el.rel = "noopener"; el.setAttribute("aria-label", b.name + " web sitesi (yeni sekme)"); }
   el.className = "brand-tile";
   el.style.setProperty("--c", b.color);
   if (i !== undefined) el.style.animationDelay = (i * 0.05) + "s";
